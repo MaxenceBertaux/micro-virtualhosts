@@ -1,0 +1,68 @@
+
+<h2 class="ui header">
+    Mes services
+    <div class="sub header">Liste des machines et des machines virtuelles HTTP.</div>
+</h2>
+ 
+<div class="ui grid">
+    <div class="eight wide column">
+        <h3 class="ui header">
+            Mes Hosts
+            <div class="sub header">Serveurs d&eacute;di&eacute;s.</div>
+            {{ q["list-hosts"] | raw }}
+        </h3>
+    </div>
+    <div class="eight wide column">
+            <h3 class="ui header">
+
+		<ul class="list-virtualhosts">
+            {% for vhost in tableau_vhosts %}
+            <h3 class="ui header">
+
+
+                <img class="ui massive rounded image" src="/micro-virtualhosts/public/img/virtualhost.png">
+
+
+                <div class="content">
+
+                    {{ vhost }}<br>
+
+
+                    <div class="ui labeled buttons">
+
+
+                        <a href="Display/virtualhost/{{ vhost.Id }}">
+                            <button class="ui button">
+                                <i class="unhide icon"></i>
+                            </button>
+                        </a>
+
+                        <a href="Display/confvhost/{{ vhost.Id }}">
+                            <button class="ui button">
+                                <i class="configure icon"></i>
+                                Configuration
+                            </button>
+                        </a>
+
+
+                        <a>
+                            <button class="ui button">
+                                <i class="refresh icon"></i>
+                                Recharger
+                            </button>
+                        </a>
+
+
+                    </div>
+
+                </div>
+
+            </h3>
+            {% endfor %}
+
+	
+
+
+		</ul>
+    </div>
+</div>
